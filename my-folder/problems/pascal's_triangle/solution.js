@@ -4,16 +4,15 @@
  */
 var generate = function(numRows) {
     if(numRows === 0) return [];
-    if(numRows === 1) return [[1]];
+    if(numRows == 1) return [[1]];
     let result = [];
-    
+
     for(let row = 1; row <= numRows; row++){
         let tempArr = [];
         for(let col = 0; col < row; col++){
-            if(col === 0 || col === row - 1){
-                tempArr.push(1);
-            }else{
-                tempArr.push(result[row - 2][col - 1] + result[row - 2][col]);
+            if(col === 0 || col === row - 1) tempArr.push(1);
+            else {
+                tempArr.push(result[row - 2][col - 1] + result[row - 2][col])
             }
         }
         result.push(tempArr);
