@@ -4,10 +4,9 @@
  */
 var majorityElement = function(nums) {
     let chars = {};
-    for (let char of nums){
+    for(let char of nums){
         chars[char] = chars[char] + 1 || 1;
     }
-    console.log(chars);
-    return parseInt(Object.keys(chars).filter(value => chars[value] === Math.max.apply(
-        null, Object.values(chars))));
+    return parseInt(Object.keys(chars).filter(ele => chars[ele] === Math.max.apply(null, Object.values(chars))));
+    
 };
